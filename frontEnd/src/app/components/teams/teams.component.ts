@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { Fan } from '../../models/fan.model';
 
 @Component({
   selector: 'app-teams',
@@ -12,6 +13,7 @@ export class TeamsComponent implements OnInit {
   TeamFans1: any[];
   TeamFans2: any[];
   TeamFans3: any[];
+  fan: Fan;
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
@@ -39,5 +41,19 @@ export class TeamsComponent implements OnInit {
       subscribe(data => {
         this.TeamFans3 = data as any[];
       });
+  }
+
+  changeTeam(teamId: number) {
+    this.fan.TeamId = teamId;
+    this._dataService.updateTeamFan(this.fan)
+      .subscribe(data => {
+        console.log(data);
+        this.getTeamFans();
+      });
+  }
+
+  asignarFan( teamFan: Fan) {
+    console.log(teamFan);
+    this.fan = teamFan;
   }
 }

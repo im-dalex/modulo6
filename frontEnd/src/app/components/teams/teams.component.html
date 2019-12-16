@@ -1,22 +1,69 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4 text-center p-2 border border-primary m-1" >
-            <h3>{{teams[0].name}}</h3>
-            <div class="container" *ngFor = "let teamFan of TeamFans1">
-                {{teamFan.name}} {{teamFan.lastName}}
-            </div>
+        <div class="col-md-3 text-center p-2" >
+
+                <table class="table table-hover table-bordered">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">
+                                <h4>{{teams[0].name}}</h4>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor = "let teamFan of TeamFans1" (click)="asignarFan(teamFan)">
+                            <th scope="row">
+                                {{teamFan.name}} {{teamFan.lastName}}
+                            </th>
+                          </tr>
+                        </tbody>
+                </table>
         </div>
-        <div class="col-md-3 text-center p-2 border border-primary m-1">
-            <h3>{{teams[1].name}}</h3>
-            <div class="container table-hover" *ngFor = "let teamFan of TeamFans2">
-                {{teamFan.name}} {{teamFan.lastName}}
-            </div>
+        <div class="col-md-1">
+            <button (click)="changeTeam(2)" class="btn btn-outline-info btn-sm m-1 mt-5">-></button>
+            <button (click)="changeTeam(1)" class="btn btn-outline-info btn-sm m-1"><-</button>
         </div>
-        <div class="col-md-4 text-center p-2 border border-primary m-1">
-            <h3>{{teams[2].name}}</h3>
-            <div class="container" *ngFor = "let teamFan of TeamFans3">
-                {{teamFan.name}} {{teamFan.lastName}}
-            </div>
+        <div class="col-md-4 text-center p-2" >
+
+                <table class="table table-hover table-bordered">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">
+                                <h4>{{teams[1].name}}</h4>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr  *ngFor = "let teamFan of TeamFans2" (click)="asignarFan(teamFan)">
+                            <th scope="row" >
+                                {{teamFan.name}} {{teamFan.lastName}}
+                            </th>
+                          </tr>
+                        </tbody>
+                </table>
+        </div>
+        <div class="col-md-1">
+            <button (click)="changeTeam(3)" class="btn btn-outline-info btn-sm m-1 mt-5">-></button>
+            <button (click)="changeTeam(2)" class="btn btn-outline-info btn-sm m-1"><-</button>
+        </div>
+        <div class="col-md-3 text-center p-2" >
+
+                <table class="table table-hover table-bordered">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">
+                                <h4>{{teams[2].name}}</h4>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor = "let teamFan of TeamFans3" (click)="asignarFan(teamFan)">
+                            <th scope="row">
+                                {{teamFan.name}} {{teamFan.lastName}}
+                            </th>
+                          </tr>
+                        </tbody>
+                </table>
         </div>
         
     </div>

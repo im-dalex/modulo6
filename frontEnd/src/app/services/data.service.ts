@@ -11,7 +11,7 @@ export class DataService {
 
   private url = 'http://127.0.0.1:8000/api';
 
-  //metodos para entidad fan
+  // metodos para entidad fan
   getFans() {
     return this.http.get(`${ this.url }/fans`);
   }
@@ -33,7 +33,7 @@ export class DataService {
   }
 
 
-  //metodos para entidad team
+  // metodos para entidad team
   getTeams() {
     return this.http.get(`${ this.url }/teams`);
   }
@@ -54,12 +54,12 @@ export class DataService {
     return this.http.delete(`${ this.url }/teams/${ id }`);
   }
 
-  //querys
+  // querys
   getTeamFan( id: number ) {
     return this.http.get(`${ this.url }/fans/teamFan/${ id }`);
   }
 
-  updateTeamFan( teamFan: any, id: number) {
-    return this.http.put(`${ this.url }/fans/updateTeam/${ id }`, teamFan);
+  updateTeamFan( teamFan: any) {
+    return this.http.put(`${ this.url }/fans/updateTeam/${ teamFan.id }`, teamFan);
   }
 }

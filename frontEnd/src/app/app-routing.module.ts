@@ -8,6 +8,7 @@ import { AddFanComponent } from './components/add-fan/add-fan.component';
 const routes: Routes = [
   { path: 'fans', component: FansComponent},
   { path: 'fans/nuevo', component: AddFanComponent},
+  { path: 'fans/edit/:id', component: AddFanComponent},
   { path: 'teams', component: TeamsComponent},
   { path: '', pathMatch: 'full', redirectTo: 'teams' },
   { path: '**', pathMatch: 'full', redirectTo: 'teams' }
