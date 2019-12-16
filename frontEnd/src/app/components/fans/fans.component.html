@@ -1,0 +1,28 @@
+<div class="container">
+        <h2>Lista de Fans</h2>
+        <button [routerLink] = "['nuevo']" class="btn btn-sm btn-outline-primary m-3"> Crear Nuevo Fan</button>
+        
+        <table class="table table-hover">
+            <thead class="thead-dark text-center">
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cedula</th>
+                    <th scope="col">Equipo</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr *ngFor = "let fan of fans">
+                    <td>{{fan.name}} {{fan.lastName}}</td>
+                    <td>{{fan.cedula}}</td>
+                    <td>{{fan.TeamId}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click) = "editFan(fan)">Editar</button> ||
+                        <button class="btn btn-danger" (click) = "deleteFan(fan.id)">Borrar</button>
+        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+</div>
