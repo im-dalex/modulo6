@@ -14,12 +14,17 @@ export class TeamsComponent implements OnInit {
   TeamFans2: any[];
   TeamFans3: any[];
   fan: Fan;
+  activado: boolean;
+
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
     this.getTeams();
     this.getTeamFans();
+    this.activado = false;
   }
+
+
 
   getTeams() {
     this._dataService.getTeams()
@@ -49,11 +54,13 @@ export class TeamsComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.getTeamFans();
+        this.activado = false;
       });
   }
 
   asignarFan( teamFan: Fan) {
     console.log(teamFan);
     this.fan = teamFan;
+    this.activado = true;
   }
 }

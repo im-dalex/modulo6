@@ -20,8 +20,8 @@
                 </table>
         </div>
         <div class="col-md-1">
-            <button (click)="changeTeam(2)" class="btn btn-outline-info btn-sm m-1 mt-5">-></button>
-            <button (click)="changeTeam(1)" class="btn btn-outline-info btn-sm m-1"><-</button>
+            <button (click)="changeTeam(2)" [disabled]="!activado" class="btn btn-outline-info btn-sm m-1 mt-5">-></button>
+            <button (click)="changeTeam(1)" [disabled]="!activado" class="btn btn-outline-info btn-sm m-1"><-</button>
         </div>
         <div class="col-md-4 text-center p-2" >
 
@@ -43,8 +43,8 @@
                 </table>
         </div>
         <div class="col-md-1">
-            <button (click)="changeTeam(3)" class="btn btn-outline-info btn-sm m-1 mt-5">-></button>
-            <button (click)="changeTeam(2)" class="btn btn-outline-info btn-sm m-1"><-</button>
+            <button (click)="changeTeam(3)" [disabled]="!activado" class="btn btn-outline-info btn-sm m-1 mt-5">-></button>
+            <button (click)="changeTeam(2)" [disabled]="!activado" class="btn btn-outline-info btn-sm m-1"><-</button>
         </div>
         <div class="col-md-3 text-center p-2" >
 
